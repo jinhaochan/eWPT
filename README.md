@@ -46,3 +46,29 @@ Secure flag forces the cookie to be sent through HTTPS
 
 Cookies are stored on the client side while Sessions are stored on the server
 
+## Information Gathering
+
+### OSINT
+
+Information can be found via:
+- WHOIS
+- DNS Queries (MX, Zone Transfers, NS)
+
+### Infrastructure
+
+Information can be found via:
+- `whatweb`
+- Checking page extensions (.js, .php, .html)
+- Checking HTTP response (Server)
+- Session IDs (PHPSESSID, ASPSESSIONID. JSESSION)
+
+### Subdomain Enumeration
+
+- `ffuf -w wordlist:FUZZ -u http://FUZZ.site.com`
+- `ffuf -w wordlist:FUZZ -u http://site.com -H "Host: http://FUZZ.site.com"` vhost scanning
+- Sublist3r
+
+### Resource Enumeration
+
+- `ffuf -w wordlist:FUZZ -u http://site.com/FUZZ -e .php,.txt,bak`
+
